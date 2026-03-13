@@ -4,6 +4,7 @@ vim.api.nvim_set_keymap('n', 'å', ':', { noremap = true, silent = true })
 
 vim.opt['tabstop'] = 4
 vim.opt['shiftwidth'] = 4
+vim.o.expandtab = true
 
 -- Set <space> as the leader key
 -- See `:help mapleader`
@@ -68,7 +69,7 @@ vim.o.splitbelow = true
 --  It is very similar to `vim.o` but offers an interface for conveniently interacting with tables.
 --   See `:help lua-options`
 --   and `:help lua-guide-options`
-vim.o.list = true
+vim.o.list = false
 vim.opt.listchars = { tab = '» ', trail = '·', nbsp = '␣' }
 
 -- Preview substitutions live, as you type!
@@ -78,7 +79,7 @@ vim.o.inccommand = 'split'
 vim.o.cursorline = true
 
 -- Minimal number of screen lines to keep above and below the cursor.
-vim.o.scrolloff = 10
+vim.o.scrolloff = 15
 
 -- if performing an operation that would fail due to unsaved changes in the buffer (like `:q`),
 -- instead raise a dialog asking if you wish to save the current file(s)
