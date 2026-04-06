@@ -1,10 +1,23 @@
 --
 -- use underutilised å to enter command mode easier in normal mode
-vim.api.nvim_set_keymap('n', 'å', ':', { noremap = true, silent = true })
+-- vim.api.nvim_set_keymap('n', 'å', ':', { noremap = true, silent = true })
+-- vim.api.nvim_set_keymap('n', '<F3>', ':r!sh ~/Documents/scripts/dateprint.sh <enter>', { noremap = true, silent = true })
+
+-- change buffer with alt+h/l and tab with alt+j/k
+vim.api.nvim_set_keymap('n', '<A-h>', '[b', {})
+vim.api.nvim_set_keymap('n', '<A-l>', ']b', {})
+vim.api.nvim_set_keymap('n', '<A-j>', 'gt', {})
+vim.api.nvim_set_keymap('n', '<A-k>', 'gT', {})
 
 vim.opt['tabstop'] = 4
 vim.opt['shiftwidth'] = 4
 vim.o.expandtab = true
+
+-- universal navigation with ctrl+hjkl
+-- vim.keymap.set('i', '<C-h>', '<Left>', { noremap = true })
+-- vim.keymap.set('i', '<C-j>', '<Down>', { noremap = true })
+-- vim.keymap.set('i', '<C-k>', '<Up>', { noremap = true }) --this didn't work, conflict? noremap didn't help
+-- vim.keymap.set('i', '<C-l>', '<Right>', { noremap = true })
 
 -- Set <space> as the leader key
 -- See `:help mapleader`
@@ -531,7 +544,7 @@ require('lazy').setup({
       local servers = {
         clangd = {},
         -- gopls = {},
-        -- pyright = {},
+        pyright = {},
         -- rust_analyzer = {},
         --
         -- Some languages (like typescript) have entire language plugins that can be useful:
